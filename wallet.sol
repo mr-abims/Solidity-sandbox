@@ -1,5 +1,7 @@
 pragma solidity 0.6.0;
 pragma experimental ABIEncoderV2;
+
+// A contract that gets the numbers of confirmation ontransactions from a list of adresses.
 contract Wallet {
     address[] public approvers;
     uint public quorum;
@@ -10,6 +12,7 @@ contract Wallet {
         uint approvals;
         bool sent;
     }
+
     Transfer[] public transfers;
     mapping(address => mapping(uint => bool)) public approvals;
 
@@ -21,6 +24,7 @@ contract Wallet {
     function getApprovers() external view returns(address[] memory) {
         return approvers;
     }
+
     function getTransfers() external view returns(Transfer[] memory) {
         return transfers;
     }
@@ -49,6 +53,7 @@ contract Wallet {
         to.transfer(amount);
         }
     }
+    
     receive() external payable{}
     
 }   

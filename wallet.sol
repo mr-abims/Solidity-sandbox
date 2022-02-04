@@ -53,7 +53,7 @@ contract Wallet {
         to.transfer(amount);
         }
     }
-    
+
     receive() external payable{}
     
 }   
